@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.whole {
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    transform: translate(-70%, -60%);
+}
+
+.base {
+    background-color: rgb(31, 0, 31);
+    width: 600px;
+    height: 20px;
+    box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.233);
+}
+
+/* candel 01 */
+
+.mainBody {
+    background-color: rgb(255, 242, 242);
+    width: 5.7em;
+    height: 12.5em;
+    border-radius: .4em;
+    border: .35em solid rgb(31, 0, 31);
+    box-shadow: inset rgba(114, 0, 0, 0.137) 0px 0px 1em 1em;
+}
+
+.candle01 {
+    position: absolute;
+    top: -965%;
+    left: 55%;
+    transform-origin: 50% 100%;
+    animation: bigCandleScale 1s infinite;
+}
+
+.tail {
+    width: .4em;
+    height: 2.5em;
+    background-color: #1f001f;
+    position: absolute;
+    top: -18%;
+    left: 46%;
+    border-radius: .3em;
+}
+
+.eye01, .eye02{
+    background-color: #1f001f;
+    width: .65em;
+    height: .65em;
+    border-radius: .4em;
+    
+}
+
+.eyes {
+    display: flex;
+    position: absolute;
+    left: 27%;
+    top: 15%;
+    gap: 1.5em;
+    animation: bigCandleEyeMotion .8s infinite ease-in;
+}
+
+.eye02  {
+    width: .75em;
+}
+
+.mouth {
+    width: 1.8em;
+    height: 1.8em;
+    background-color: #1f001f;
+    position: absolute;
+    border-radius: 1em;
+    top: 24%;
+    left:30%;
+    transform: scale(0);
+    transform-origin: 0% 50%;
+
+    animation: mouthBlow .7s ease-in infinite;
+}
+
+
+/* candel 02 */
+
+.candle02 {
+    position: absolute;
+    top: -517%;
+    left: 30%;
+}
+
+
+.mainBody01 {
+    background-color: rgb(255, 242, 242);
+    width: 5.7em;
+    height: 6.9rem;
+    border-radius: .4em;
+    border: .35em solid rgb(31, 0, 31);
+    box-shadow: inset rgba(114, 97, 0, 0.137) 0px 0px 1em 1em;
+}
+
+.tail01 {
+    width: .30em;
+    height: 1.8em;
+    background-color: #1f001f;
+    position: absolute;
+    top: -23.5%;
+    left: 49%;
+    border-radius: .3em;
+    transform-origin: 50% 100%;
+
+    animation: Rotate90 .3s infinite;
+}
+
+.eye11, .eye12{
+    background-color: #1f001f;
+    width: .57em;
+    height: .57em;
+    border-radius: .4em; 
+}
+
+.eyes1 {
+    display: flex;
+    position: absolute;
+    left: 27%;
+    top: 19%;
+    gap: 1.4em;
+}
+
+.flame01 {
+    width: 1.8em;
+    height: 1.8em;
+    background:linear-gradient(55deg, rgb(255, 137, 137) , rgb(255, 251, 0));
+    border-top-right-radius: 3em 1.5em;
+    border-top-left-radius: .3em;
+    border-bottom-left-radius: 1.5em 3em;
+    border-bottom-right-radius: 1.5em;
+    position: absolute;
+    left: 20%;
+    top: -30%;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    animation: flame .3s infinite ;
+}
+
+.flame {
+    animation: opacity00 .2s infinite ;
+    animation-fill-mode: forwards;
+    
+}
+
+
+
+/* highlights */
+
+.bigCircle {
+    background-color: rgba(255, 0, 0, 0);
+    width: 22em;
+    height: 22em;
+    position: absolute;
+    border: .5em solid #e2e2e1;
+    border-radius: 16em;
+    top: -1700%;
+    left: 10%;
+    z-index: -1;
+    transform: scale(0);
+    transform-origin: 50% 70%;
+
+    animation: bigCircle 1s infinite;
+}
+
+.smallCircle {
+    width: 1.2em ;
+    height: 1.2em;
+    background-color: rgba(128, 128, 128, 0.301);
+    position: absolute;
+    border-radius: .7em;
+    top: -930%;
+    left: 34%;
+
+    animation: smallCircle 1s infinite;
+
+}
+
+.line {
+    width: 3em;
+    height: .5em;
+    background-color: rgba(128, 128, 128, 0.26);
+    position: absolute;
+    border-radius: .1em;
+    top: -650%;
+    left: 25%;
+    transform-origin: 100% 50%;
+    animation: lineA .7s infinite;
+}
+
+/* eyeballs */
+
+.eyeball01, .eyeball02, .eyeball11, .eyeball12{
+    background-color: white;
+    width: .2em;
+    height: .2em;
+    position: absolute;
+    border-radius: .3em;
+    top: 35%;
+}
+
+.eyeball01 {
+    left: 2%;
+}
+
+.eyeball02 {
+    left: 77%;
+}
+
+
+.eyeball12 {
+    top: 25%;
+    left: 88%;
+    transform-origin: 0% 40%;
+    animation: eyeSwing 1s infinite ease-out;
+}
+.eyeball11 {
+    left: 12%;
+    top: 25%;
+    transform-origin: 0% 40%;
+    animation: eyeSwing 1s infinite ease-out;
+
+}
+
+
+/* Animations */
+
+
+/* Flame Animation */
+
+
+@keyframes flame {
+    0% {
+        left: 20%;
+        top: -30%;
+        background:linear-gradient(55deg, rgb(255, 152, 152) , rgb(255, 187, 0));
+    }
+    25% {
+        left: 20.1%;
+        top: -30%;
+        background:linear-gradient(55deg, rgb(255, 196, 0), rgb(255, 152, 152));
+    }
+    50% {
+        left: 20%;
+        top: -30%;
+        background:linear-gradient(55deg, rgb(255, 154, 154) , rgb(255, 208, 0));
+    }
+    75% {
+        left: 19.9%;
+        top: -30%;
+        background:linear-gradient(55deg, rgb(255, 196, 0), rgb(255, 152, 152));
+    }
+    100% {
+        left: 20%;
+        top: -30%;
+        background:linear-gradient(55deg, rgb(255, 118, 118) , rgb(255, 187, 0));
+    }
+}
+
+
+/* Mouth Blow animation */
+
+
+@keyframes mouthBlow {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+
+/* Highlights Animation  */
+
+@keyframes bigCircle {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes lineA {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);      
+    }
+    75% {
+        transform: scale(0);
+        transform-origin: 0% 50%;
+    }
+    100% {
+        transform: scale(0);
+    }
+    
+}
+
+@keyframes smallCircle {
+    0% {
+        transform: scale(.5);
+    }
+    50% {
+        transform: scale(.8);
+        top: -1100%;
+        left: 30%;
+        opacity: .3;
+    }
+    100% {
+        transform: scale(.2);
+        opacity: 0;
+        top: -1270%;
+        left: 26%;
+    }
+}
+
+/* eye spin animation */
+
+
+@keyframes eyeSwing {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+/* big candle scale motion while blowing the small candle*/
+
+@keyframes bigCandleScale {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* big candle eye motion while blowing */
+
+
+@keyframes bigCandleEyeMotion {
+    0% {
+        left: 27%;
+        top: 15%;
+    }
+    100% {
+        left: 22%;
+        top: 15%;
+    }
+}
+
+/* samll candle blown and reignite animation */
+
+@keyframes opacity00 {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes opacity01 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* tip rotate motion of small candle */
+
+@keyframes Rotate90 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes Rotate-90 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-90deg);
+    }
+}
